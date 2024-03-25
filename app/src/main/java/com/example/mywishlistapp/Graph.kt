@@ -10,7 +10,7 @@ this mean it can be implemented only by once. that,s why it create only one data
  */
 object Graph {
     //The lateinit keyword indicates that the variable will be initialized later.
-    lateinit var database:WishDataBase
+    private lateinit var database:WishDataBase
 
     /*The by lazy keyword indicates that the wishRepository property
     will only be initialized when it is first accessed.*/

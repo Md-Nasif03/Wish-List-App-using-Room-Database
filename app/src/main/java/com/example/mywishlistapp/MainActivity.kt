@@ -62,6 +62,44 @@ fun MyApp(viewModel: WishViewModel ){
 
     }
 }
+/* if we want to pass more then one data to second screen.
+fun MyApp(viewModel: WishViewModel) {
+    val navController = rememberNavController()
+
+    NavHost(navController = navController, startDestination = Screen.HomeScreen.route) {
+        composable(Screen.HomeScreen.route) {
+            HomeView(viewModel, navController)
+        }
+
+        composable(
+            route = Screen.AddScreen.route + "/{id}/{name}/{age}",
+            arguments = listOf(
+                navArgument("id") {
+                    type = NavType.LongType
+                    defaultValue = 0L
+                    nullable = false
+                },
+                navArgument("name") {
+                    type = NavType.StringType
+                    defaultValue = ""
+                    nullable = false
+                },
+                navArgument("age") {
+                    type = NavType.StringType
+                    defaultValue = ""
+                    nullable = false
+                }
+            )
+        ) { backStackEntry ->
+            val id = backStackEntry.arguments!!.getLong("id")
+            val name = backStackEntry.arguments!!.getString("name")!!
+            val age = backStackEntry.arguments!!.getString("age")!!
+
+            AddEditDataView(wishViewModel = viewModel, id = id, name = name, age = age, navController)
+        }
+    }
+}
+ */
 
 
 
