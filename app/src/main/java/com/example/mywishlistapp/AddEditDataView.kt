@@ -43,7 +43,6 @@ fun AddEditDataView(wishViewModel: WishViewModel,
     val scope= rememberCoroutineScope()
     val scaffoldState= rememberScaffoldState()
 
-    //make sure that outfield id fill with the wish when go for update
     if (id!=0L){
         val wish=wishViewModel.getAWish(id).collectAsState(initial = WishItem(0L,"",""))
         wishViewModel.wishTitle=wish.value.wish
@@ -52,10 +51,7 @@ fun AddEditDataView(wishViewModel: WishViewModel,
         wishViewModel.wishTitle=""
         wishViewModel.wishDescription=""
     }
-
-
-
-
+    
     Scaffold (
         topBar = {
             TopAppBar(title =
